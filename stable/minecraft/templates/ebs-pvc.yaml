@@ -3,6 +3,7 @@ apiVersion: v1
 metadata:
   name: ebs-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
