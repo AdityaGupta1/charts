@@ -153,7 +153,7 @@ spec:
       - name: datadir
       {{- if .Values.persistence.dataDir.enabled }}
         persistentVolumeClaim:
-          claimName: {{ template "minecraft.fullname" . }}-datadir
+          claimName: ebs-pvc
       {{- else }}
         emptyDir: {}
       {{- end }}
