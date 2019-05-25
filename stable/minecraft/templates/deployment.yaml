@@ -153,8 +153,10 @@ spec:
       - name: datadir
       {{- if .Values.persistence.dataDir.enabled }}
         persistentVolumeClaim:
-          claimName: ebs-pvc
+          claimName: efs-pvc
       {{- else }}
         emptyDir: {}
       {{- end }}
+      nodeSelector:
+        failure-domain.beta.kubernetes.io/zone: us-west-2b
 {{ end }}
