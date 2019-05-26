@@ -148,12 +148,12 @@ spec:
         {{- end }}
         volumeMounts:
         - name: datadir
-          mountPath: /data
+          mountPath: /data/
       volumes:
       - name: datadir
       {{- if .Values.persistence.dataDir.enabled }}
         persistentVolumeClaim:
-          claimName: efs-pvc
+          claimName: ebs-pvc
       {{- else }}
         emptyDir: {}
       {{- end }}
